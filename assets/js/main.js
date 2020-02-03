@@ -1,5 +1,5 @@
-/*Preloader*/
-$(window).load(function () {
+jQuery(document).ready(function ($) {
+    /*Preloader*/
     $("#status").fadeOut();
     $("#preloader").addClass('slide').delay(350).fadeOut("slow");
 
@@ -8,9 +8,8 @@ $(window).load(function () {
         $(".first-title").addClass('toleft');
         $(".second-title").addClass('toright');
     }, 300);
-});
-/*back-to-top-button*/
-jQuery(document).ready(function ($) {
+
+    /*back-to-top-button*/
     var offset = 300,
         offset_opacity = 1200,
         scroll_top_duration = 700,
