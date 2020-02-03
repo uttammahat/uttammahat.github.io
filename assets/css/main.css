@@ -1161,13 +1161,13 @@ section.portfolio_details_area.work {
 }
 
 .portfolio_right_text p {
-    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
     margin: 0 0 14px 0;
     line-height: 32px;
 }
 
 ul.list {
-    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
     line-height: 32px;
     list-style: none;
     margin: 0;
