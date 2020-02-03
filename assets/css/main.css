@@ -988,7 +988,6 @@ div.social.footer .social_container .copyright {
 }
 
 .portfolio_details_inner .row .col-lg-6:first-child {
-    box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.4);
     margin-bottom: 24px;
     margin-right: 24px;
     flex: unset;
@@ -1003,6 +1002,7 @@ div.social.footer .social_container .copyright {
     overflow: hidden;
     height: 520px;
     position: relative;
+    box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.4);
 }
 
 .portfolio_details_inner .left_img.overflow-scroll {
