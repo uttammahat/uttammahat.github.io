@@ -1229,6 +1229,10 @@ section.contact .contact_container .contact_content .social.footer ul.social_ite
         height: 250px;
     }
 
+
+}
+
+@media only screen and (max-width: 767.98px) {
     .portfolio_details_inner .row .col-lg-6:first-child {
         margin-right: 0;
     }
