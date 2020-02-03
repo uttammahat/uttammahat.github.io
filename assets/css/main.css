@@ -1086,26 +1086,32 @@ section.portfolio_details_area.work {
 } */
 
 .hover-item.bottom a.bt-link.btn {
-    background: rgba(255, 255, 255, 0.9);
     display: block;
     margin-right: auto;
     margin-left: auto;
-    color: #2f2f2f;
+    background: rgba(244, 67, 54, 0.94);
+    color: #fff;
     border-radius: 4px;
     font-size: 13px;
     padding: 14px;
     font-weight: 700;
     cursor: pointer;
     position: relative;
-    -mox-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+    -mox-box-shadow: 0 1px 4px rgba(244, 67, 54, 0.3), 0 0 40px rgba(244, 67, 54, 0.1);
+    -webkit-box-shadow: 0 1px 4px rgba(244, 67, 54, 0.3), 0 0 40px rgba(244, 67, 54, 0.1);
+    box-shadow: 0 1px 4px rgba(244, 67, 54, 0.3), 0 0 40px rgba(244, 67, 54, 0.1);
     transition: all 0.5s;
 }
 
 .hover-item.bottom a.bt-link.btn:hover {
     color: #fff;
     background: transparent;
+    -mox-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .hover-item.bottom a.bt-link.btn::before,
