@@ -1,21 +1,19 @@
-/*Preloader*/
-$(window).load(function () {
-    setTimeout(function () {
-        $("#status").fadeOut("slow");
-        $("#preloader").addClass('slide');
-    }, 200);
+jQuery(document).ready(function ($) {
+    /*Preloader*/
+    $("#status").fadeOut();
+    $("#preloader").addClass('slide').delay(350).fadeOut("slow");
+
     setTimeout(function () {
         $("#grid .grid-line").addClass('line');
         $(".first-title").addClass('toleft');
         $(".second-title").addClass('toright');
     }, 300);
-});
-/*back-to-top-button*/
-jQuery(document).ready(function ($) {
-    var offset = 300
-        , offset_opacity = 1200
-        , scroll_top_duration = 700
-        , $back_to_top = $('.cd-top');
+
+    /*back-to-top-button*/
+    var offset = 300,
+        offset_opacity = 1200,
+        scroll_top_duration = 700,
+        $back_to_top = $('.cd-top');
     $(window).scroll(function () {
         ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible'): $back_to_top.removeClass('cd-is-visible cd-fade-out');
         if ($(this).scrollTop() > offset_opacity) {
@@ -25,10 +23,10 @@ jQuery(document).ready(function ($) {
     $back_to_top.on('click', function (event) {
         event.preventDefault();
         $('body,html').animate({
-            scrollTop: 0
-        , }, scroll_top_duration);
+            scrollTop: 0,
+        }, scroll_top_duration);
     });
-    
+
     // Add smooth scrolling to all links
     $(".btn").on('click', function (event) {
         // Make sure this.hash has a value before overriding default behavior
