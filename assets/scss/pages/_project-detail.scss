@@ -38,15 +38,15 @@
   //   margin-bottom: toRem(48);
 
   img {
-    height: 240px;
+    // height: 240px;
     object-fit: cover;
     object-position: center;
     box-shadow: 0px 8px 48px 0px rgba(221, 208, 187, 0.16);
 
     @media screen and (min-width: 768px) {
-      height: auto;
-      object-fit: unset;
-      object-position: unset;
+      // height: auto;
+      // object-fit: unset;
+      // object-position: unset;
     }
   }
 }
@@ -61,5 +61,16 @@
 
   @media screen and (min-width: 992px) {
     margin-bottom: toRem(64);
+  }
+}
+
+.project-detail-cover {
+  &::before {
+    padding-bottom: 32%;
+  }
+}
+.project-detail-cover {
+  img {
+    // object-fit: cover;
   }
 }
