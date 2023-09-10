@@ -14,13 +14,16 @@
 }
 
 html {
-  scroll-behavior: smooth;
   line-height: 1.15;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: $primary-light-600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: auto;
   box-sizing: border-box;
 
   @include darkMode {
@@ -138,7 +141,7 @@ p {
     width: 16px;
     height: 16px;
     border-radius: 100%;
-    z-index: 1;
+    z-index: 2;
     transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
       0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
     user-select: none;

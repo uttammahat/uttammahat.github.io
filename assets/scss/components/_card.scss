@@ -9,6 +9,12 @@
   &--work-item {
     margin-bottom: toRem(144);
 
+    &:not(.work--horizontal):hover {
+      .card__img {
+        filter: grayscale(0.4);
+      }
+    }
+
     .card-body {
       display: flex;
       align-items: center;

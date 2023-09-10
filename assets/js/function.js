@@ -14,6 +14,60 @@ $(document).ready(function (e) {
   requestAnimationFrame(raf);
 
 
+  // parallax image on scroll
+  gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
+    gsap.utils
+      .toArray(section.querySelectorAll("[data-parallax]"))
+      .forEach((parallax) => {
+        const depth = parallax.dataset.speed;
+        const movement = -(parallax.offsetHeight * depth);
+
+        gsap.fromTo(
+          parallax, {
+            y: -movement
+          }, {
+            y: movement,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              scrub: true,
+              markers: false
+            }
+          }
+        );
+      });
+  });
+
+  $(".hero-section, .all-work-section").mousemove(function (e) {
+    parallaxIt(e, ".intro--typo, .work--typo", -96);
+  });
+
+  function parallaxIt(e, target, movement) {
+    var $this = $(".hero-section, .all-work-section");
+    var relX = e.pageX - $this.offset().left;
+    var relY = e.pageY - $this.offset().top;
+
+    TweenMax.to(target, 1, {
+      x: (relX - $this.width() / 2) / $this.width() * movement,
+      y: (relY - $this.height() / 2) / $this.height() * movement
+    });
+  }
+
+  $(".hero-section").mousemove(function (e) {
+    parallaxIt(e, ".hero_typo", -32);
+  });
+
+  function parallaxIt(e, target, movement) {
+    var $this = $(".hero-section");
+    var relX = e.pageX - $this.offset().left;
+    var relY = e.pageY - $this.offset().top;
+
+    TweenMax.to(target, 1, {
+      x: (relX - $this.width() / 2) / $this.width() * movement,
+      y: (relY - $this.height() / 2) / $this.height() * movement
+    });
+  }
+
   // menu toggle
   if ($(window).width() < 991.98) {
     const toggle_menu = document.querySelector('#toggle-menu')
@@ -22,28 +76,6 @@ $(document).ready(function (e) {
     const tl = gsap.timeline({
       paused: true
     });
-
-    // tl.to('.nav-link', {
-    //   translateY: '48%',
-    //   duration: 0.5,
-    // })
-    // tl.to('.header-nav-body', {
-    //   translateX: '100%',
-    // })
-    // tl.to('.nav-container', {
-    //   // width: '75%',
-    // })
-
-    // toggle_menu.addEventListener('click', () => {
-    //   tl.reversed(!tl.reversed());
-    // })
-    // close_menu.addEventListener('click', () => {
-    //   tl.reversed(!tl.reversed());
-    // })
-
-    // $(".nav-link, .logo").on('click', function (event) {
-    //   tl.reversed(!tl.reversed());
-    // });
 
     tl.to(headere_nav_body, {
         duration: 1,
@@ -78,63 +110,17 @@ $(document).ready(function (e) {
     });
   }
 
-
-
-  /* Add smooth scrolling to all links */
-  $("a[href='#']").on('click', function (event) {
-    event.preventDefault();
-    var sectionID = $(this).attr("data-id");
-    scrollToID("#" + sectionID, 600);
+  // anchor tag smooth scroll
+  $('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').stop().animate({
+      scrollTop: $($(this).attr('href')).offset().top
+    }, 1000, 'linear');
   });
-
-  /* scroll function */
-  function scrollToID(id, speed) {
-    var offSet = 50;
-    var targetOffset = $(id).offset().top - offSet;
-    $("html,body").animate({
-      scrollTop: targetOffset
-    }, speed);
-  }
-
 
   // update copyright year
   var updateYear = new Date().getFullYear();
   $('.updateYear').html(updateYear);
-
-
-
-  // split type on scroll gsap animation
-  gsap.registerPlugin(ScrollTrigger);
-
-  const splitTypes = document.querySelectorAll('.reveal-type');
-
-  splitTypes.forEach((char, i) => {
-
-    const bg = char.dataset.bgColor
-    const fg = char.dataset.fgColor
-
-    const text = new SplitType(char, {
-      types: 'chars'
-    })
-
-    gsap.fromTo(text.chars, {
-      color: bg,
-    }, {
-      color: fg,
-      duration: 0.3,
-      stagger: 0.02,
-      scrollTrigger: {
-        trigger: char,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true,
-        markers: false,
-        toggleActions: 'play play reverse reverse'
-      }
-    })
-  })
-
-
 
   // custom cursor using gsap animation
   const cursor = document.querySelector(".cursor");
