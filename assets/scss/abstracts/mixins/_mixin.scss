@@ -1,0 +1,243 @@
+// @import "variables";
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+@mixin push--auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin clearboth {
+  clear: both;
+}
+
+@mixin pseudo($content: "", $display: block, $pos: absolute) {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin position-absolute-top-left($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin position-absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin overlay() {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin display-inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-direction-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin flex-direction-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin justify-content-flex-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+@mixin justify-content-flex-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+@mixin justify-content-space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin align-content-center {
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+@mixin align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin align-items-flex-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+@mixin align-items-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+}
+
+@mixin flex-wrap($flex-wrap) {
+  -ms-flex-wrap: $flex-wrap;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin flex-basis($flex-basis) {
+  -ms-flex-preferred-size: $flex-basis;
+  flex-basis: $flex-basis;
+}
+
+@mixin box-shadow($box-shadow) {
+  -webkit-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+@mixin transition(
+  $transition-property: all,
+  $transition-duration: 0.4s,
+  $transition-timing-function: ease
+) {
+  -webkit-transition: $transition-property $transition-duration
+    $transition-timing-function;
+  -o-transition: $transition-property $transition-duration
+    $transition-timing-function;
+  transition: $transition-property $transition-duration
+    $transition-timing-function;
+}
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+//transform origin
+@mixin transform-origin($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin border($direction, $width, $style, $color) {
+  border-#{$direction}: $width $style $color;
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// square object
+@mixin square($width) {
+  height: $width;
+  width: $width;
+}
+
+// Square image
+@mixin img-fit($height, $size) {
+  display: block;
+  object-position: center;
+  height: $height;
+
+  @if $size == "square" {
+    object-fit: contain;
+    width: $height;
+  }
+
+  @if $size == "contain" {
+    object-fit: contain;
+  } @else {
+    object-fit: cover;
+  }
+}
+
+@mixin unorder-list-disc {
+  line-height: 2;
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 1.25rem;
+}
+
+// Dark Mode Detection or CSS
+@mixin darkMode {
+  @if ($darkMode) {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+}
+@mixin lightMode {
+  @if ($lightMode) {
+    @media (prefers-color-scheme: light) {
+      @content;
+    }
+  }
+}

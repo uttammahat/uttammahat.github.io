@@ -1,0 +1,76 @@
+@use "sass:math";
+@use "sass:map";
+
+// path
+$images: "../images/";
+$namespace: "artistportfolio";
+
+// BASE FONT SIZE
+$font-size-base: 16px;
+
+// FONT SETUP
+/* stylelint-disable */
+$font-family-base: "Plus Jakarta Sans", sans-serif;
+/* stylelint-enable */
+
+// FONT SIZES
+$sizes: (
+  xxs: 0.625rem,
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  xmd: 1.125rem,
+  md: 1.25rem,
+  lg: 1.5rem,
+  xl: 2rem,
+  xxl: 2.625rem,
+  vxxl: 3.25rem,
+);
+
+// SIZE
+$font-xxs: map.get($sizes, xxs);
+$font-xs: map.get($sizes, xs);
+$font-sm: map.get($sizes, sm);
+$font-base: map.get($sizes, base);
+$font-xmd: map.get($sizes, xmd);
+$font-md: map.get($sizes, md);
+$font-lg: map.get($sizes, lg);
+$font-xl: map.get($sizes, xl);
+$font-xxl: map.get($sizes, xxl);
+$font-vxxl: map.get($sizes, vxxl);
+
+// WEIGHT
+$bolder: 800;
+$bold: 700;
+$semibold: 600;
+$mediumbold: 500;
+$normal: 400;
+$fontlight: 300;
+
+// BREAKPOINTS RESPONSIVE
+$breakpoints: (
+  xs-down: 0,
+  sm-down: 575.98px,
+  md-down: 767.98px,
+  lg-down: 991.98px,
+  xl-down: 1199.98px,
+  xxl-down: 1399.98px,
+  xxxl-down: 1899.98px,
+  xs-up: 0,
+  sm-up: 576px,
+  md-up: 768px,
+  lg-up: 992px,
+  xl-up: 1200px,
+  xxl-up: 1400px,
+  xxxl-up: 1900px,
+);
+
+// PADDAINGS
+$section-padding-top: 6.25rem;
+$section-padding-bottom: 6.25rem;
+
+// DARK MODE
+$darkMode: true;
+
+// LIGHT MODE
+$lightMode: true;

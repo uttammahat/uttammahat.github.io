@@ -1,0 +1,79 @@
+@use "sass:math";
+
+// Small devices (landscape phones, 576px and up)
+@mixin media-breakpoint-up-sm {
+  @media (min-width: map-get($breakpoints, sm-up)) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin media-breakpoint-up-md {
+  @media (min-width: map-get($breakpoints, md-up)) {
+    @content;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin media-breakpoint-up-lg {
+  @media (min-width: map-get($breakpoints, lg-up)) {
+    @content;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin media-breakpoint-up-xl {
+  @media (min-width: map-get($breakpoints, xl-up)) {
+    @content;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin media-breakpoint-up-xxl {
+  @media (min-width: map-get($breakpoints, xxl-up)) {
+    @content;
+  }
+}
+
+// max-width
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@mixin media-breakpoint-down-sm {
+  @media (max-width: map-get($breakpoints, sm-down)) {
+    @content;
+  }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@mixin media-breakpoint-down-md {
+  @media (max-width: map-get($breakpoints, md-down)) {
+    @content;
+  }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@mixin media-breakpoint-down-lg {
+  @media (max-width: map-get($breakpoints, lg-down)) {
+    @content;
+  }
+}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@mixin media-breakpoint-down-xl {
+  @media (max-width: map-get($breakpoints, xl-down)) {
+    @content;
+  }
+}
+
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@mixin media-breakpoint-down-xxl {
+  @media (max-width: map-get($breakpoints, xxl-down)) {
+    @content;
+  }
+}
+
+// `xxxl` applies to xx-large devices (large desktops, less than 1900px)
+@mixin media-breakpoint-down-xxxl {
+  @media (max-width: map-get($breakpoints, xxxl-down)) {
+    @content;
+  }
+}

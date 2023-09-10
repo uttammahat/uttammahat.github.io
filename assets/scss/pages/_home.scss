@@ -1,0 +1,266 @@
+/* hero section start */
+.hero-section {
+  padding-top: toRem(120);
+
+  h1 {
+    // font-size: toRem(138);
+    font-size: calc(toRem(48) + (138 - 48) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: 800;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-bottom: toRem(24);
+
+    span {
+      display: block;
+    }
+  }
+
+  p {
+    max-width: 539px;
+    margin-bottom: toRem(24);
+  }
+
+  .hero-img {
+    text-align: right;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      bottom: 0;
+      right: -80px;
+      display: block;
+    }
+    @media screen and (min-width: 992px) {
+    }
+
+    @media screen and (min-width: 1200px) {
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      max-width: 480px;
+
+      @media screen and (max-width: 991px) {
+        max-width: 480px;
+      }
+
+      @media screen and (min-width: 1200px) {
+        max-width: unset;
+      }
+    }
+  }
+
+  .hero_typo {
+    display: none;
+    color: $primary-dark-300;
+    // font-size: toRem(138);
+    font-size: calc(toRem(28) + (138 - 28) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: 800;
+    letter-spacing: toRem(11);
+    text-transform: uppercase;
+    line-height: 100%;
+    white-space: nowrap;
+    position: absolute;
+    bottom: toRem(16);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+
+    @include darkMode {
+      color: $dm-primary-dark-300;
+    }
+
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
+  }
+
+  .btn-wrapper {
+    margin-top: toRem(96);
+    z-index: 1;
+    position: relative;
+  }
+
+  .massive-typo {
+    top: 42%;
+  }
+}
+
+/* hero section close */
+
+/* portfolio section start */
+.massive-typo-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.massive-typo {
+  color: $primary-accent;
+  // font-size: toRem(946);
+  font-size: calc(toRem(584) + (946 - 584) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 800;
+  line-height: 70%;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  @include darkMode {
+    color: $dm-primary-accent;
+  }
+}
+
+.work-item-row {
+  .col-12:nth-child(1),
+  .col-12:nth-child(4),
+  .col-12:nth-child(6),
+  .col-12:nth-child(8),
+  .col-12:nth-child(10) {
+    @media screen and (min-width: 768px) {
+      margin-top: toRem(144);
+    }
+  }
+}
+
+.work-date,
+.work-type {
+  font-size: toRem(20);
+  color: $primary-dark-300;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin: 16px 0;
+
+  @include darkMode {
+    color: $dm-primary-dark-300;
+  }
+
+  .work-line {
+    width: 32px;
+    height: 1px;
+    display: inline-block;
+    background-color: $primary-dark-300;
+
+    @include darkMode {
+      background-color: $dm-primary-dark-300;
+    }
+
+    @media (min-width: 768px) {
+      width: 80px;
+    }
+  }
+}
+
+.work-meta {
+  @include transition;
+}
+/* portfolio section close */
+
+/* work experience section start */
+.work-experience-section {
+  padding-bottom: toRem(180);
+}
+
+.experience-item {
+  margin-bottom: toRem(88);
+}
+
+.company-name,
+.course-name {
+  // font-size: toRem(28);
+  font-size: calc(toRem(20) + (28 - 20) * ((100vw - 300px) / (1600 - 300)));
+  margin-bottom: toRem(16);
+  line-height: 120%;
+}
+/* work experience section close */
+
+/* education section start */
+.working-date,
+.education-date {
+  margin-top: toRem(8);
+  color: $primary-dark-300;
+
+  @include darkMode {
+    color: $dm-primary-dark-300;
+  }
+}
+
+.education-item-row {
+  margin-bottom: toRem(88);
+}
+/* education section close */
+
+/* skills section start */
+.skills-section {
+  h3 {
+    margin-bottom: toRem(32);
+  }
+}
+
+.skill-list {
+  list-style-type: none;
+  margin-bottom: toRem(56);
+}
+
+.other-skills-row {
+  margin-top: toRem(32);
+}
+/* skills section close */
+
+/* other project section start */
+
+.other-projects-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 480px;
+
+  @media screen and (min-width: 768px) {
+    height: 800px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $primary-light-600;
+    opacity: 0.7;
+
+    @include darkMode {
+      background-color: $dm-primary-light-600;
+    }
+  }
+
+  .btn-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+/* other project section close */
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}

@@ -1,0 +1,220 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+
+:root {
+  --input-padding-x: 0.75rem;
+  --input-padding-y: 0.75rem;
+  color-scheme: light dark; /* both supported */
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: $primary-light-600;
+  box-sizing: border-box;
+
+  @include darkMode {
+    background-color: $dm-primary-light-600;
+  }
+}
+
+body::-webkit-scrollbar-track {
+  // -webkit-box-shadow: inset 0 0 6px rgba(9, 19, 21, 0.3);
+  // -mox-box-shadow: inset 0 0 6px rgba(9, 19, 21, 0.3);
+  // box-shadow: inset 0 0 6px rgba(9, 19, 21, 0.3);
+  background-color: $primary-light-600;
+
+  @include darkMode {
+    background-color: $dm-primary-light-600;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: $primary-light-600;
+
+  @include darkMode {
+    background-color: $dm-primary-light-600;
+  }
+}
+
+body::-webkit-scrollbar-thumb {
+  // -webkit-box-shadow: inset 0 0 6px rgba(9, 19, 21, 0.3);
+  // -mox-box-shadow: inset 0 0 6px rgba(9, 19, 21, 0.3);
+  // box-shadow: inset 0 0 6px rgba(9, 19, 21, 0.3);
+  background-color: $primary-dark-500;
+
+  @include darkMode {
+    background-color: $dm-primary-dark-500;
+  }
+}
+
+::selection {
+  background-color: $primary-light-700;
+
+  @include darkMode {
+    background-color: $dm-primary-light-700;
+  }
+}
+
+a {
+  font-size: toRem(16);
+  line-height: 1.7;
+  margin: 0px;
+  @include transition();
+}
+
+a:focus {
+  outline: none !important;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: $primary-dark-300;
+
+  @include darkMode {
+    color: $dm-primary-dark-300;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+a,
+.btn,
+.btn:hover {
+  text-decoration: none;
+}
+
+a:focus,
+.btn:focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.absolute-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.fluid-img {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .cursor {
+    position: absolute;
+    background-color: $primary-dark-500;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+      0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0.8);
+    backdrop-filter: blur(1px);
+
+    @include darkMode {
+      background-color: $dm-primary-dark-500;
+    }
+
+    &.active {
+      opacity: 1;
+      transform: scale(8);
+      background-color: hsla(40, 33%, 32%, 0.6);
+      transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+        0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    }
+  }
+
+  .cursor::before {
+    content: "View Project";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 2px;
+    // top: 8px;
+    bottom: 4px;
+    left: 2px;
+    display: block;
+    border-radius: 100%;
+    opacity: 0;
+    color: $primary-light-500;
+
+    @include darkMode {
+      color: $dm-primary-light-500;
+    }
+  }
+
+  .cursor.empty_content {
+    &::before {
+      content: "";
+    }
+
+    &.active {
+      opacity: 1;
+      transform: scale(4);
+    }
+  }
+
+  .cursor.active::before {
+    opacity: 1;
+  }
+
+  .cursor-follower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: -1;
+    background-color: rgba(128, 128, 128, 0.7);
+    transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+      0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity,
+      0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) background;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(4px, 4px);
+  }
+
+  .cursor-follower.active {
+    opacity: 0.3;
+    transform: scale(0);
+  }
+}
+@supports (mix-blend-mode: exclusion) {
+  .cursor-follower {
+    // mix-blend-mode: exclusion;
+  }
+}

@@ -1,0 +1,8 @@
+// only import all the scss files
+@import "abstracts/abstracts";
+// vendors
+@import "base/base";
+@import "layout/layout";
+@import "components/components";
+@import "pages/pages";
+// themes

@@ -1,0 +1,23 @@
+section {
+  padding-top: toRem(96);
+  padding-bottom: toRem(96);
+
+  &.section--padding-md {
+    padding-top: toRem(48);
+    padding-bottom: toRem(48);
+  }
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: calc(toRem(40) + (62 - 40) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 800;
+  line-height: 100%; /* 62px */
+  text-transform: uppercase;
+  margin-bottom: toRem(48);
+}

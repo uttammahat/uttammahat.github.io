@@ -1,0 +1,53 @@
+@use "sass:math";
+
+.hidden {
+  display: none !important;
+}
+
+.overflow-scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  // background-color: $primary-dark-300;
+}
+
+.overflow-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  // background-color: $primary-dark-300;
+}
+
+.overflow-scrollbar::-webkit-scrollbar-thumb {
+  // background-color: $primary-accent;
+}
+
+.h--max {
+  height: calc(100% - 24px);
+  margin-bottom: toRem(24);
+}
+
+.position {
+  &-absolute {
+    position: absolute;
+  }
+
+  &-relative {
+    position: relative;
+  }
+}
+
+.lineheight {
+  &-sm {
+    line-height: 1.2 !important;
+  }
+
+  &-md {
+    line-height: 1.4 !important;
+  }
+
+  &-lg {
+    line-height: 1.6 !important;
+  }
+
+  &-xl {
+    line-height: 1.8 !important;
+  }
+}
