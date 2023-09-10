@@ -14,19 +14,6 @@ $(document).ready(function (e) {
   requestAnimationFrame(raf);
 
 
-  // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-  // const smoother = ScrollSmoother.create({
-  //   content: "#selectedwork",
-  //   smooth: 1,
-  //   effects: true
-  // });
-
-  // smoother.effects("img", {
-  //   speed: "auto"
-  // });
-
-
   // menu toggle
   if ($(window).width() < 991.98) {
     const toggle_menu = document.querySelector('#toggle-menu')
