@@ -38,6 +38,8 @@ $(document).ready(function (e) {
       });
   });
 
+
+  // mouse movement parallex
   $(".hero-section, .all-work-section").mousemove(function (e) {
     parallaxIt(e, ".intro--typo, .work--typo", -96);
   });
@@ -78,18 +80,18 @@ $(document).ready(function (e) {
     });
 
     tl.to(headere_nav_body, {
-        duration: 1,
+        duration: 0.6,
         ease: "power3.out",
         x: 0
       }).to(".nav-link, .header-item", {
         opacity: 1,
         y: 0,
         duration: 0.2,
-        stagger: {
-          // wrap advanced options in an object
-          each: 0.1,
-          ease: "power1.in"
-        }
+        // stagger: {
+        //   // wrap advanced options in an object
+        //   each: 0.1,
+        //   ease: "power1.in"
+        // }
       })
       .reverse(); // Finally reverse the timeline. reversed() is true
 
