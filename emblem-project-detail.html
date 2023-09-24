@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Emblem Jeweler Mobile App | Uttam Mahat - UI/UX & Front-End Designer
+    </title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta description="..." />
+    <meta name="theme-color" content="#F8F5F0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="header-wrapper">
+          <div class="header-item header-item--logo">
+            <a href="index.html" class="logo">
+              <img src="assets/images/hero-img.png" alt="Uttam" />
+              <span class="btn__label brand-name"
+                ><span>Uttam</span> <span>Mahat</span></span
+              >
+            </a>
+          </div>
+          <div class="header-nav-body" id="header-nav-body">
+            <div class="nav-container">
+              <button class="btn btn--tertiary close-menu" id="close-menu">
+                Close
+              </button>
+              <div class="header-item header-item--menu">
+                <p class="header-title">Menu</p>
+                <nav>
+                  <ul>
+                    <li>
+                      <a
+                        href="all-projects.html"
+                        class="btn btn--tertiary nav-link arrow-icon-up"
+                        data-content="Work"
+                      >
+                        <div class="btn__label">Work</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="index.html#workexperience"
+                        class="btn btn--tertiary nav-link arrow-icon-up"
+                        data-content="About"
+                      >
+                        <div class="btn__label">About</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#contact"
+                        class="btn btn--tertiary nav-link arrow-icon-up"
+                        data-content="Contact"
+                      >
+                        <div class="btn__label">Contact</div>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header-item header-item--download">
+                <div class="btn-wrapper">
+                  <a
+                    href="#"
+                    class="btn btn--tertiary nav-link arrow-icon-up icon--sm"
+                    data-content="Download Resume"
+                  >
+                    <div class="btn__label">Download Resume</div>
+                    <span class="icon__wrapper icon__wrapper--unset">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 34L34 14M34 14H14M34 14V34"
+                          stroke="#091315"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="header-item header-item--contact">
+                <p class="header-title">Get in Touch</p>
+                <div class="btn-wrapper">
+                  <a
+                    href="mailto:uttammahat99@gmail.com"
+                    target="_blank"
+                    class="btn btn--tertiary nav-link arrow-icon-up icon--sm"
+                    data-content="Email"
+                  >
+                    <div class="btn__label">Email</div>
+                    <span class="icon__wrapper icon__wrapper--unset">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 34L34 14M34 14H14M34 14V34"
+                          stroke="#091315"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                  <a
+                    href="https://np.linkedin.com/in/uttammahat99"
+                    target="_blank"
+                    class="btn btn--tertiary nav-link arrow-icon-up icon--sm"
+                    data-content="LinkedIn"
+                  >
+                    <div class="btn__label">LinkedIn</div>
+                    <span class="icon__wrapper icon__wrapper--unset">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 34L34 14M34 14H14M34 14V34"
+                          stroke="#091315"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="header-item header-item--location">
+                <p class="header-title">Based on</p>
+                <p class="current-location">Kathmandu, <span>Nepal</span></p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn--tertiary toggle-menu" id="toggle-menu">
+            Menu
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="work-detail-section section--padding-md">
+        <div class="container-fluid">
+          <div class="row custom-gutter align-items-center">
+            <div
+              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+            >
+              <h1 class="section-title">Emblem</h1>
+            </div>
+          </div>
+          <div class="row custom-gutter project-detail-row">
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+              <div class="project-info">
+                <div class="project-info__item">
+                  <h3 class="project-title">My Role</h3>
+                  <div class="project-body">
+                    <ul class="project-info__list">
+                      <li>UI/UX Design,</li>
+                      <li>Development</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="project-info__item">
+                  <h3 class="project-title">Tools</h3>
+                  <div class="project-body">
+                    <ul class="project-info__list">
+                      <li>Figma</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6 col-xxl-4">
+              <div class="project-description">
+                <p>
+                  Emblem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quaerat doloribus porro, in natus voluptatibus tempore
+                  accusamus sed quasi quidem exercitationem? Ab sint repudiandae
+                  error iure in, harum eos consequatur adipisci.
+                </p>
+                <div class="btn-wrapper">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="btn btn--primary arrow-icon-up icon--md"
+                    data-content="Figma Prototype"
+                  >
+                    <div class="btn__label">Figma Prototype</div>
+                    <span class="icon__wrapper icon--md">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 34L34 14M34 14H14M34 14V34"
+                          stroke="#091315"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="project-detail-cover" data-module-parallax>
+                <img
+                  class="fluid-img"
+                  data-parallax
+                  data-speed="-0.2"
+                  src="assets/images/work/emblem/emblem-cover-1.jpg"
+                  alt="Emblem"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="work-detail-section section--padding-md">
+        <div class="container-fluid">
+          <div class="row custom-gutter project-detail-row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+              <h2 class="section-title">Challenges & Solutions</h2>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-xl-6 col-xxl-4">
+              <div class="project-description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  vero voluptatum deleniti, a aliquid voluptas fugiat,
+                  voluptatibus eius iusto itaque quod facere ipsa aperiam
+                  officiis sapiente corporis suscipit ratione nostrum!
+                </p>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eligendi omnis adipisci tenetur cupiditate aperiam minima,
+                  quaerat corrupti! Beatae distinctio corporis illum magni
+                  similique atque doloremque aliquam reprehenderit corrupti?
+                  Quasi, vel.
+                </p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="project-detail-cover" data-module-parallax>
+                <img
+                  class="fluid-img"
+                  data-parallax
+                  data-speed="-0.2"
+                  src="assets/images/work/emblem/emblem-cover-2.jpg"
+                  alt="Emblem"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="project-detail-cover" data-module-parallax>
+                <img
+                  class="fluid-img"
+                  data-parallax
+                  data-speed="-0.2"
+                  src="assets/images/work/emblem/emblem-cover-3.jpg"
+                  alt="Emblem"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer start -->
+    <footer class="footer-area" id="contact">
+      <div class="container-fluid">
+        <div class="row custom-gutter">
+          <div class="col-12 col-md-12 col-lg-12">
+            <h2 class="section-title"><span>Have an Idea?</span> Let's Talk</h2>
+          </div>
+          <div
+            class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-4 offset-2 offset-sm-4 offset-md-6 offset-lg-6 offset-xl-8 offset-xxl-8"
+          >
+            <div class="footer-item send--email">
+              <h3 class="footer-title">Send Email</h3>
+              <div class="footer-body">
+                <a
+                  href="mailto:uttammahat99@gmail.com"
+                  class="btn btn--tertiary arrow-icon-up"
+                  data-content="uttammahat99@gmail.com"
+                >
+                  <div class="btn__label">uttammahat99@gmail.com</div>
+                  <span class="icon__wrapper icon__wrapper--unset icon--md">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 34L34 14M34 14H14M34 14V34"
+                        stroke="#091315"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg> </span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row custom-gutter mt--lg">
+          <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+            <div class="footer-item border--top">
+              <div class="footer-body">
+                <nav class="footer-nav">
+                  <a
+                    href="index.html"
+                    class="btn btn--tertiary arrow-icon-up footer-nav__item"
+                    data-content="Home"
+                  >
+                    <div class="btn__label">Home</div>
+                  </a>
+                  <a
+                    href="all-projects.html"
+                    class="btn btn--tertiary arrow-icon-up footer-nav__item"
+                    data-content="Work"
+                  >
+                    <div class="btn__label">Work</div>
+                  </a>
+                  <a
+                    href="index.html#skills"
+                    data-id="skills"
+                    class="btn btn--tertiary arrow-icon-up footer-nav__item"
+                    data-content="Skills"
+                  >
+                    <div class="btn__label">Skills</div>
+                  </a>
+                  <a
+                    href="index.html#education"
+                    data-id="education"
+                    class="btn btn--tertiary arrow-icon-up footer-nav__item"
+                    data-content="Education"
+                  >
+                    <div class="btn__label">Education</div>
+                  </a>
+                  <a
+                    href="#contact"
+                    data-id="contact"
+                    class="btn btn--tertiary arrow-icon-up footer-nav__item"
+                    data-content="Contact"
+                  >
+                    <div class="btn__label">Contact</div>
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-4 offset-sm-1 offset-md-3 offset-lg-3 offset-xl-5 offset-xxl-5"
+          >
+            <div class="footer-item-wrapper border--top">
+              <div class="footer-item-left">
+                <div class="footer-item">
+                  <h3 class="footer-title">Contact us</h3>
+                  <div class="footer-body">
+                    <a
+                      href="tel:++977-984334434"
+                      class="btn btn--tertiary arrow-icon-up"
+                      data-content="+977-984334434"
+                    >
+                      <div class="btn__label">+977-984334434</div>
+                    </a>
+                    <a
+                      href="mailto:uttammahat99@gmail.com"
+                      class="btn btn--tertiary arrow-icon-up"
+                      data-content="uttammahat99@gmail.com"
+                    >
+                      <div class="btn__label">uttammahat99@gmail.com</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="footer-item">
+                  <h3 class="footer-title">Location</h3>
+                  <div class="footer-body">
+                    <p>Kathmandu, Nepal</p>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-item-right">
+                <div class="footer-item">
+                  <h3 class="footer-title">Follow Me</h3>
+                  <div class="footer-body">
+                    <div class="btn-wrapper">
+                      <a
+                        href="https://np.linkedin.com/in/uttammahat99"
+                        target="_blank"
+                        class="btn btn--tertiary arrow-icon-up icon--sm"
+                        data-content="LinkedIn"
+                      >
+                        <div class="btn__label">LinkedIn</div>
+                        <span class="icon__wrapper icon__wrapper--unset">
+                          <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14 34L34 14M34 14H14M34 14V34"
+                              stroke="#091315"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/uiux_uttam/"
+                        target="_blank"
+                        class="btn btn--tertiary arrow-icon-up icon--sm"
+                        data-content="Instagram"
+                      >
+                        <div class="btn__label">Instagram</div>
+                        <span class="icon__wrapper icon__wrapper--unset">
+                          <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14 34L34 14M34 14H14M34 14V34"
+                              stroke="#091315"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                      <a
+                        href="https://dribbble.com/uttammahat"
+                        target="_blank"
+                        class="btn btn--tertiary arrow-icon-up icon--sm"
+                        data-content="Dribbble"
+                      >
+                        <div class="btn__label">Dribbble</div>
+                        <span class="icon__wrapper icon__wrapper--unset">
+                          <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14 34L34 14M34 14H14M34 14V34"
+                              stroke="#091315"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                      <a
+                        href="https://www.behance.net/uttammahat"
+                        target="_blank"
+                        class="btn btn--tertiary arrow-icon-up icon--sm"
+                        data-content="Behance"
+                      >
+                        <div class="btn__label">Behance</div>
+                        <span class="icon__wrapper icon__wrapper--unset">
+                          <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14 34L34 14M34 14H14M34 14V34"
+                              stroke="#091315"
+                              stroke-width="4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-12">
+            <div class="mt--md">
+              <p class="copyright-txt">
+                © <span class="updateYear"></span> — Copyright
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer close -->
+
+    <div class="relative z-10">
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+    <script type="text/javascript" src="assets/js/function.js"></script>
+  </body>
+</html>
