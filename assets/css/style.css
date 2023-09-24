@@ -2730,6 +2730,7 @@ a.btn .btn__label {
   margin-top: 3rem;
 }
 .project-detail-cover img {
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -2746,6 +2747,8 @@ a.btn .btn__label {
   }
 }
 
-.project-detail-cover::before {
-  padding-bottom: 32%;
+@media screen and (min-width: 992px) {
+  .project-detail-cover::before {
+    padding-bottom: 99vh;
+  }
 }
