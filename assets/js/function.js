@@ -1,29 +1,34 @@
 $(document).ready(function (e) {
 
   // lenis documentation setup
-  const lenis = new Lenis();
+  // const lenis = new Lenis();
 
-  lenis.on('scroll', (e) => {
-    // console.log(e);
-  })
+  // lenis.on('scroll', (e) => {
+  //   // console.log(e);
+  // })
+
+  // function raf(time) {
+  //   lenis.raf(time);
+  //   requestAnimationFrame(raf);
+  // }
+  // requestAnimationFrame(raf);
+
+  const lenis = new Lenis({
+    duration: 0.8,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    gestureDirection: "vertical",
+    smooth: true,
+    smoothTouch: false,
+    touchMultiplier: 2,
+  });
 
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
+
   requestAnimationFrame(raf);
-
-  // const lenis = new Lenis({
-  //   duration: 0.2,
-  //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  // })
-
-  // function raf(time) {
-  //   lenis.raf(time)
-  //   requestAnimationFrame(raf)
-  // }
-
-  // requestAnimationFrame(raf)
 
 
   // parallax image on scroll
@@ -119,7 +124,7 @@ $(document).ready(function (e) {
       $("#close-menu").toggleClass("active");
     });
 
-    $(".nav-link, .logo").on('click', function (e) {
+    $(".nav-link").on('click', function (e) {
       tl.reversed(!tl.reversed());
     });
   }
