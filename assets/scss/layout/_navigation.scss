@@ -189,6 +189,31 @@ header {
     text-decoration: none;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 3;
+    background: linear-gradient(
+      180deg,
+      rgba(247, 244, 239, 0) 60%,
+      rgba(247, 244, 239, 0.32) 75%,
+      #f7f4ef 100%
+    );
+
+    @include darkMode {
+      background: linear-gradient(
+        180deg,
+        rgba(12, 26, 29, 0) 60%,
+        rgba(12, 26, 29, 0.32) 75%,
+        #0c1a1d 100%
+      );
+    }
+  }
+
   .brand-name {
     color: $primary-dark-300;
     font-size: 16px;

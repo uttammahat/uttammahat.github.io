@@ -872,6 +872,23 @@ header {
 .logo:hover {
   text-decoration: none;
 }
+.logo::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 3;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(247, 244, 239, 0)), color-stop(75%, rgba(247, 244, 239, 0.32)), to(#f7f4ef));
+  background: linear-gradient(180deg, rgba(247, 244, 239, 0) 60%, rgba(247, 244, 239, 0.32) 75%, #f7f4ef 100%);
+}
+@media (prefers-color-scheme: dark) {
+  .logo::before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(12, 26, 29, 0)), color-stop(75%, rgba(12, 26, 29, 0.32)), to(#0c1a1d));
+    background: linear-gradient(180deg, rgba(12, 26, 29, 0) 60%, rgba(12, 26, 29, 0.32) 75%, #0c1a1d 100%);
+  }
+}
 .logo .brand-name {
   color: #808080;
   font-size: 16px;
@@ -2308,6 +2325,23 @@ a.btn .btn__label {
     position: relative;
   }
 }
+.hero-section .hero-img::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 3;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(247, 244, 239, 0)), color-stop(75%, rgba(247, 244, 239, 0.32)), to(#f7f4ef));
+  background: linear-gradient(180deg, rgba(247, 244, 239, 0) 30%, rgba(247, 244, 239, 0.32) 75%, #f7f4ef 100%);
+}
+@media (prefers-color-scheme: dark) {
+  .hero-section .hero-img::before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(12, 26, 29, 0)), color-stop(75%, rgba(12, 26, 29, 0.32)), to(#0c1a1d));
+    background: linear-gradient(180deg, rgba(12, 26, 29, 0) 30%, rgba(12, 26, 29, 0.32) 75%, #0c1a1d 100%);
+  }
+}
 .hero-section .hero-img img {
   width: 100%;
   position: relative;
@@ -2335,9 +2369,9 @@ a.btn .btn__label {
   white-space: nowrap;
   position: absolute;
   bottom: 1rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: -20%;
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
   z-index: 0;
 }
 @media (prefers-color-scheme: dark) {
