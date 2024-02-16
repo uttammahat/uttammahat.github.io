@@ -5,14 +5,19 @@
 
     .card__img {
       position: absolute;
-      bottom: 0;
-      left: 34%;
+      top: 50%;
+      // bottom: 0;
+      left: 0%;
       max-width: 400px;
       width: 100%;
       height: 300px;
       opacity: 0;
+      visibility: hidden;
       display: none;
-      transform: translateY(-16px) rotateX(16deg) rotateZ(-6deg) scale(1);
+      // transform: translateY(-16px) rotateX(16deg) rotateZ(-6deg) scale(1);
+      // z-index: -1;
+      box-shadow: 0px 8px 48px 0px #ddd0bb;
+      pointer-events: none;
 
       @media screen and (min-width: 768px) {
         display: block;
@@ -74,16 +79,27 @@
     }
 
     &:hover {
-      .card__img {
-        transform: translateY(0px) rotateX(16deg) rotateZ(-6deg) scale(1.1);
-        opacity: 1;
-      }
+      z-index: 2;
+      text-decoration: none;
+
+      // .card__img {
+      //   transform: translateY(0px) rotateX(16deg) rotateZ(-6deg) scale(1.1);
+      //   opacity: 1;
+      // }
 
       .card-body {
         background-color: $primary-accent;
 
         @include darkMode {
           background-color: $dm-primary-accent;
+        }
+
+        @media screen and (min-width: 768px) {
+          background-color: transparent;
+
+          @include darkMode {
+            background-color: transparent;
+          }
         }
       }
 
@@ -95,8 +111,23 @@
   }
 }
 
+.other-work-item {
+  position: relative;
+  @include transition();
+}
+
 .other-work-list {
   list-style-type: none;
+
+  &:hover {
+    .other-work-item {
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .meta-buttons-wrapper {
