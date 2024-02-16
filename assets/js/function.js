@@ -77,7 +77,7 @@ $(document).ready(function (e) {
   });
 
   function parallaxIt(e, target, movement) {
-    var $this = $(".hero-section");
+    var $this = $(".hero-section, .all-work-section");
     var relX = e.pageX - $this.offset().left;
     var relY = e.pageY - $this.offset().top;
 
@@ -85,6 +85,51 @@ $(document).ready(function (e) {
       x: (relX - $this.width() / 2) / $this.width() * movement,
       y: (relY - $this.height() / 2) / $this.height() * movement
     });
+  }
+
+  if ($(window).width() > 991.98) {
+    let other_work_item = document.querySelectorAll(".other-work-item");
+
+
+    other_work_item.forEach((el) => {
+      let card__img = el.querySelector(".card__img");
+
+      // gsap.set(card__img, {
+      //   autoAlpha: 0
+      // });
+
+      gsap.to(other_work_item, {
+        // zIndex: 1,
+      })
+
+      el.addEventListener("mouseenter", () => {
+        gsap.to(card__img, {
+          autoAlpha: 1,
+          zIndex: -1,
+          // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
+        })
+      });
+      el.addEventListener("mouseleave", () => {
+        gsap.to(card__img, {
+          autoAlpha: 0,
+          zIndex: 0,
+          // clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)"
+        })
+      });
+      el.addEventListener('mousemove', (e) => {
+        gsap.set(card__img, {
+          // move images to mouse position
+          // x: e.x,
+          // y: e.y,
+          x: e.pageX + 50,
+          // transform origin of images to center
+          xPercent: -50,
+          yPercent: -50,
+          duration: 0.2,
+          ease: "ease-in-out"
+        })
+      })
+    })
   }
 
   // menu toggle
@@ -145,7 +190,7 @@ $(document).ready(function (e) {
   const cursor = document.querySelector(".cursor");
   const follower = document.querySelector(".cursor-follower");
   if ($(window).width() > 991.98) {
-    const hover_cursor_text = document.querySelectorAll(".btn--primary, .btn--secondary, .card--work-item .card__img");
+    const hover_cursor_text = document.querySelectorAll(".btn--primary, .btn--secondary, .card--work-item");
     const btn_icon_only = document.querySelectorAll(".logo, .btn--tertiary");
 
     let posX = 0,
@@ -205,4 +250,5 @@ $(document).ready(function (e) {
       });
     });
   }
+
 });
