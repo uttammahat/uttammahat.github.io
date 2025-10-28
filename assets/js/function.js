@@ -13,6 +13,7 @@ $(document).ready(function (e) {
   // }
   // requestAnimationFrame(raf);
 
+  // Initialize Lenis Smooth Scroll
   const lenis = new Lenis({
     duration: 0.8,
     easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
@@ -23,65 +24,76 @@ $(document).ready(function (e) {
     touchMultiplier: 2,
   });
 
+  // RAF Sync with GSAP ScrollTrigger
   function raf(time) {
     lenis.raf(time);
+    ScrollTrigger.update();
     requestAnimationFrame(raf);
   }
-
   requestAnimationFrame(raf);
 
+  lenis.on("scroll", ScrollTrigger.update);
 
-  // parallax image on scroll
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Ensure all .card__img elements clip overflow
+  document.querySelectorAll(".card__img").forEach((el) => {
+    el.style.overflow = "hidden";
+    el.style.position = "relative";
+  });
+
+  // Parallax Effect on Images Inside Cards
   gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
-    gsap.utils
-      .toArray(section.querySelectorAll("[data-parallax]"))
-      .forEach((parallax) => {
-        const depth = parallax.dataset.speed;
-        const movement = -(parallax.offsetHeight * depth);
+    const parallaxImages = section.querySelectorAll("[data-parallax]");
 
-        gsap.fromTo(
-          parallax, {
-            y: -movement
-          }, {
-            y: movement,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              scrub: true,
-              markers: false
-            }
-          }
-        );
-      });
-  });
+    parallaxImages.forEach((img) => {
+      const depth = parseFloat(img.dataset.speed) || -0.2;
+      const movement = depth * 100; // smaller value = subtler motion
 
-
-  // mouse movement parallex
-  $(".hero-section, .all-work-section").mousemove(function (e) {
-    parallaxIt(e, ".intro--typo, .work--typo", -96);
-  });
-
-  function parallaxIt(e, target, movement) {
-    var $this = $(".hero-section, .all-work-section");
-    var relX = e.pageX - $this.offset().left;
-    var relY = e.pageY - $this.offset().top;
-
-    TweenMax.to(target, 1, {
-      x: (relX - $this.width() / 2) / $this.width() * movement,
-      y: (relY - $this.height() / 2) / $this.height() * movement
+      gsap.fromTo(
+        img, {
+          yPercent: movement
+        }, // start slightly shifted
+        {
+          yPercent: -movement, // move opposite as you scroll
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            markers: false, // turn true to debug
+          },
+        }
+      );
     });
-  }
-
-  $(".hero-section").mousemove(function (e) {
-    parallaxIt(e, ".hero_typo", -32);
   });
 
+  // Refresh triggers once all are set
+  ScrollTrigger.refresh();
+
+
+
+
+  // Mouse movement parallax for both hero and work sections
+  $(".hero-section, .all-work-section").mousemove(function (e) {
+    // Determine the target and movement multiplier based on section
+    if ($(this).hasClass("hero-section")) {
+      parallaxIt(e, ".hero_typo", -32);
+    } else if ($(this).hasClass("all-work-section")) {
+      parallaxIt(e, ".intro--typo, .work--typo", -96);
+    }
+  });
+
+  // Parallax effect function
   function parallaxIt(e, target, movement) {
-    var $this = $(".hero-section, .all-work-section");
+    var $this = $(e.currentTarget); // Use the specific section as the context
     var relX = e.pageX - $this.offset().left;
     var relY = e.pageY - $this.offset().top;
 
-    TweenMax.to(target, 1, {
+    // GSAP 3 syntax: 'gsap.to()' replaces 'TweenMax.to()'
+    gsap.to(target, {
+      duration: 1,
       x: (relX - $this.width() / 2) / $this.width() * movement,
       y: (relY - $this.height() / 2) / $this.height() * movement
     });
