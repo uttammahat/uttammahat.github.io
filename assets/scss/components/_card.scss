@@ -24,7 +24,7 @@
 
     .card__img {
       position: relative;
-      // overflow: hidden;
+      overflow: hidden; /* <– prevents image from leaving the card */
       // height: 800px;
       // max-height: 400px;
     }
@@ -36,6 +36,7 @@
       object-fit: cover;
       object-position: center;
       display: block;
+      will-change: transform; /* better performance */
       @include transition;
       // position: absolute;
       // bottom: 0;
