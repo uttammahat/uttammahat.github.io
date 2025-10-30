@@ -14,32 +14,32 @@ $(document).ready(function (e) {
   // requestAnimationFrame(raf);
 
   // Initialize Lenis Smooth Scroll
-  const lenis = new Lenis({
-    duration: 0.8,
-    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-    direction: "vertical",
-    gestureDirection: "vertical",
-    smooth: true,
-    smoothTouch: false,
-    touchMultiplier: 2,
-  });
+  // const lenis = new Lenis({
+  //   duration: 0.8,
+  //   easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+  //   direction: "vertical",
+  //   gestureDirection: "vertical",
+  //   smooth: true,
+  //   smoothTouch: false,
+  //   touchMultiplier: 2,
+  // });
 
   // RAF Sync with GSAP ScrollTrigger
-  function raf(time) {
-    lenis.raf(time);
-    ScrollTrigger.update();
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+  // function raf(time) {
+  //   lenis.raf(time);
+  //   ScrollTrigger.update();
+  //   requestAnimationFrame(raf);
+  // }
+  // requestAnimationFrame(raf);
 
-  lenis.on("scroll", ScrollTrigger.update);
+  // lenis.on("scroll", ScrollTrigger.update);
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
   // Ensure all .card__img elements clip overflow
   document.querySelectorAll(".card__img").forEach((el) => {
     el.style.overflow = "hidden";
-    el.style.position = "relative";
+    // el.style.position = "relative";
   });
 
   // Parallax Effect on Images Inside Cards
@@ -48,7 +48,7 @@ $(document).ready(function (e) {
 
     parallaxImages.forEach((img) => {
       const depth = parseFloat(img.dataset.speed) || -0.2;
-      const movement = depth * 100; // smaller value = subtler motion
+      const movement = depth * 80; // smaller value = subtler motion
 
       gsap.fromTo(
         img, {
